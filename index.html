@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="upperbackground">
+            <div id="navbar" class="nav">
+                <a href="" id="homeicon"><i class="fa fa-home"></i></a>
+                <a href="">ABOUT</a>
+                <a href="">SERVICES</a>
+                <a href="">CONTACT</a>
+                <a href="">PORTFOLIO</a>
+                <a href="javascript:void(0);" class="icon" onclick="myfunction()"><i class="fa fa-bars"></i></a>             
+            </div>
+            
+            <div id="custom">CUSTOM</div>
+            <div id="caferacer">CAFE RACER</div>
+            <img id="bike" onmouseover="movebike(this)" src="bike.png">
+            <div id="lowerbackground">
+            <table>
+                <tr id="infoicons">
+                    <td><i class="fa fa-gear" ></i></td>
+                    <td><i class="fa fa-gear" "></i></td>
+                    <td><i class="fa fa-gear" ></i></td>
+                </tr>
+                <tr id="infoheading">
+                    <td>CAR RACER PARTS</td>
+                    <td>THE GARAGE</td>
+                    <td>CAFE CONNECT</td>
+
+                </tr>
+                <tr id="infotext">
+                    <td>Neat own nor she said see walk. And charm add green you these. Sang busy in this drew ye fine. At greater prepare musical so attacks as on distant.  </td>
+                    <td>Neat own nor she said see walk. And charm add green you these. Sang busy in this drew ye fine. At greater prepare musical so attacks as on distant.  </td>
+                    <td>Neat own nor she said see walk. And charm add green you these. Sang busy in this drew ye fine. At greater prepare musical so attacks as on distant.  </td>
+                </tr>
+                <tr >
+                    <td><button class="infobutton">INFO</button></td>
+                    <td><button class="infobutton">INFO</button></td>
+                    <td><button class="infobutton">INFO</button></td>
+                </tr>
+            </table>
+            
+        </div>
+
+        </div>
+        <button id="stop" onclick="stop()">STOP THE BIKE</button>
+
+        
+        <script>
+            function myfunction()
+            {
+                var x=document.getElementById("navbar");
+                if(x.className=="nav")
+                {
+                    x.className+="responsive";
+                }
+                else{
+                    x.className="nav";
+                }
+
+            }
+            function stop()
+            {
+                for(var i=0;i<10000;i++)
+                {
+                    window.clearInterval(i);
+                }
+                var x=document.getElementById("bike");
+                x.style.marginLeft="20vw";
+                var y=document.getElementById("stop");
+                y.style.display="none";
+
+            }
+            function showstop()
+            {
+                var x=document.getElementById("stop");
+                x.style.display="block";
+            }
+            function movebike(x)
+            {
+               showstop();
+                i=0;
+                var myvar=setInterval(changeposition,1,x);
+                console.log(myvar);
+                 
+
+            }
+            
+            function changeposition(x)
+            {
+                x.style.marginLeft=i.toString()+"px";
+                if(i==(screen.width-100))
+                {
+                    i=0;
+                }
+                else
+                {
+                    i++;
+                }
+               
+               
+            }
+            function changeattri()
+            {
+                var x=document.getElementById("bike");
+                x.style.top=((x.style.height)).toString()+"vh";
+            }
+            document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' });
+            changeattri();
+            
+        </script>
+    </body>
+</html>
